@@ -1,7 +1,7 @@
 # ASP.NET-MVC-jQuery-Datatables
 Price Quotation Table with jQuery Datatables (ASP.NET MVC)
 
-In order to make datatable workable, we should place our scripts in the following order.
+In order to make datatable work, we should place our scripts in the following order.
 
 ```C#
 <link href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css" rel="stylesheet" />
