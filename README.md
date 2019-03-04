@@ -31,6 +31,34 @@ CREATE TABLE [dbo].[Table] (
     PRIMARY KEY CLUSTERED ([QuoteID] ASC)
 );
 ```
+HomeController.cs;
+```ASP.NET
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace MVCDatatable.Controllers
+{
+    public class HomeController : Controller
+    {
+       public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult loaddata()
+        {
+            using (MyDatabaseEntities dc = new MyDatabaseEntities())
+            {
+                var data = dc.Tables.OrderBy(a => a.QuoteID).ToList();
+                return Json(new { data = data }, JsonRequestBehavior.AllowGet);
+            }
+        }
+    }
+}
+```
 
 ![alt text](https://i.ibb.co/s68fn03/a1.png)
 
