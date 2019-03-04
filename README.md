@@ -16,7 +16,21 @@ In order to make datatable workable, we should place our scripts in the followin
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.5.4/js/buttons.print.min.js"></script>
 ```
 
+T-SQL Database Code:
 
+```SQL
+CREATE TABLE [dbo].[Table] (
+    [QuoteID]      NCHAR (10) NOT NULL,
+    [CustomerName] NCHAR (40) NOT NULL,
+    [Description]  NCHAR (40) NOT NULL,
+    [Quantity]     FLOAT (53) NOT NULL,
+    [UnitPrice]    FLOAT (53) NOT NULL,
+    [VatRate]      FLOAT (53) NOT NULL,
+    [SubTotal]     FLOAT (53) NOT NULL,
+    [TotalAmount]  FLOAT (53) NOT NULL,
+    PRIMARY KEY CLUSTERED ([QuoteID] ASC)
+);
+```
 
 ![alt text](https://i.ibb.co/s68fn03/a1.png)
 
