@@ -8,3 +8,8 @@ Price Quotation Table with jQuery Datatables (ASP.NET MVC)
 
 
 ![alt text](https://i.ibb.co/ysXCYT3/Przechwytywanie.png)
+
+
+![alt text](https://i.ibb.co/4dnyWHQ/Przechwytywanie.png)
+
+
