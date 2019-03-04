@@ -60,6 +60,107 @@ namespace MVCDatatable.Controllers
 }
 ```
 
+View for Index;
+
+```ASP.NET
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Price Quotation List</h2><br />
+<div style="margin:0 auto;">
+    <table style="width:100%;" class="display" id="QuoteTable">
+        <thead>
+            <tr>
+                <th>Quote ID</th>
+                <th>Customer</th>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>VAT/Tax Rate</th>
+                <th>Net Offer</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+
+@*Datatable CSS*@
+<link href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css" rel="stylesheet" />
+
+@*Datatable-buttons CSS*@
+<link href="https://cdn.datatables.net/buttons/1.5.4/css/buttons.dataTables.min.css" rel="stylesheet" />
+
+@*jQuery JS*@
+@Scripts.Render("~/bundles/jquery")
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+@*Datatable JS*@
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.5.4/js/dataTables.buttons.min.js" ></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.5.4/js/buttons.flash.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.5.4/js/buttons.html5.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.5.4/js/buttons.print.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $.noConflict();
+        $('#QuoteTable').DataTable({
+
+            dom: 'Bfrtip',
+            buttons: [
+                {
+                    extend: 'copy',
+                    title: 'Quote Report'
+                },
+                {
+                    extend: 'csv',
+                    title: 'Quote Report'
+                },
+                 {
+                     extend: 'excel',
+                     title: 'Quote Report'
+                },
+                  {
+                    extend: 'pdf',
+                      title: 'Quote Report'
+                },
+                   {
+                       extend: 'print',
+                       title: 'Quote Report'
+                }
+            ],
+
+            "ajax": {
+                "url": "/home/loaddata",
+                "type": "GET",
+                "datatype": "json",
+            },
+            "language": {
+                "zeroRecords": "No records found to display"
+            },
+           
+            "columns": [
+                { "data": "QuoteID", "autoWidth": true },
+                { "data": "CustomerName", "autoWidth": true },
+                { "data": "Description", "autoWidth": true },
+                { "data": "Quantity", "autoWidth": true },
+                { "data": "UnitPrice", "autoWidth": true },
+                { "data": "VatRate", "autoWidth": true },
+                { "data": "SubTotal", "autoWidth": true },
+                { "data": "TotalAmount", "autoWidth": true }
+            ]
+        });
+    });
+</script>
+
+```
+
 ![alt text](https://i.ibb.co/s68fn03/a1.png)
 
 
