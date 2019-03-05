@@ -1,5 +1,5 @@
 # ASP.NET-MVC-jQuery-Datatables
-Price Quotation Table with jQuery Datatables (ASP.NET MVC)
+# Price Quotation Table with jQuery Datatables (ASP.NET MVC)
 
 In order to make datatable work, we should place our scripts in the following order.
 
@@ -16,7 +16,7 @@ In order to make datatable work, we should place our scripts in the following or
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.5.4/js/buttons.print.min.js"></script>
 ```
 
-T-SQL Database Code:
+### T-SQL Database Code:
 
 ```SQL
 CREATE TABLE [dbo].[Table] (
@@ -31,7 +31,7 @@ CREATE TABLE [dbo].[Table] (
     PRIMARY KEY CLUSTERED ([QuoteID] ASC)
 );
 ```
-HomeController.cs;
+### HomeController.cs;
 ```ASP.NET
 using System;
 using System.Collections.Generic;
@@ -60,7 +60,7 @@ namespace MVCDatatable.Controllers
 }
 ```
 
-View for Index;
+### View for Index;
 
 ```ASP.NET
 
